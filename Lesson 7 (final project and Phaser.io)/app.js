@@ -1,6 +1,6 @@
 var config = {
-	preload:preload
-	create:create
+	preload:preload,
+	create:create,
 	update:update
 }
 
@@ -29,9 +29,11 @@ function create(){
 
 	//Ground
 	var ground = platforms.create(0, 550, 'ground')
+	ground.scale.setTo(2, 2)
+	ground.body.immovable = true
 
 	//The ledges
-	var ledge = platform.create(400, 400, 'ground')
+	var ledge = platforms.create(400, 400, 'ground')
 	ledge.body.immovable = true
 	ledge = platforms.create(-100, 250, 'ground')
 	ledge.body.immovable = true
@@ -43,7 +45,7 @@ function create(){
 	}
 
 	//Positioning the score
-	scorelabel = game.add.text(300, 500, 'Score ', style)
+	scorelabel = game.add.text(300, 560, 'Score ', style)
 	scoretext = game.add.text(420, 560, score, style)
 	scorelabel.setShadow(3, 3, 'rgba(0, 0, 0, 0.5', 2)
 	scoretext.setShadow(3, 3, 'rgba(0, 0, 0, 0.5', 2)

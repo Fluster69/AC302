@@ -47,14 +47,14 @@ function create(){
 	//Positioning the score
 	scorelabel = game.add.text(300, 560, 'Score ', style)
 	scoretext = game.add.text(420, 560, score, style)
-	scorelabel.setShadow(3, 3, 'rgba(0, 0, 0, 0.5', 2)
-	scoretext.setShadow(3, 3, 'rgba(0, 0, 0, 0.5', 2)
+	scorelabel.setShadow(3, 3, 'rgba(0, 0, 0, 0.5)', 2)
+	scoretext.setShadow(3, 3, 'rgba(0, 0, 0, 0.5)', 2)
 
 	//Positioning the lives
 	lifelabel = game.add.text(10, 5, 'Lives: ', style)
 	lifetext = game.add.text(120, 5, life, style)
-	lifelabel.setShadow(3, 3, 'rgba(0, 0, 0, 0.5', 2)
-	lifetext.setShadow(3, 3, 'rgba(0, 0, 0, 0.5', 2)
+	lifelabel.setShadow(3, 3, 'rgba(0, 0, 0, 0.5)', 2)
+	lifetext.setShadow(3, 3, 'rgba(0, 0, 0, 0.5)', 2)
 }
 
 function update(){

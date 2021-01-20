@@ -67,7 +67,7 @@ function create(){
 	enemy1 = game.add.sprite(760, 20, "baddie");
 	player.animations.add("left", [0, 1], 10, true);
 	player.animations.add("right", [2, 3], 10, true);
-	game.physics.arcade.enable(player);
+	game.physics.arcade.enable(enemy1);
 	enemy1.body.bounce.y = 0.2;
 	enemy1.body.gravity.y = 500;
 	enemy1.body.collideWorldBounds = true;
@@ -81,9 +81,9 @@ function create(){
 	}
 
 	cusrors = game.input.keyboard.createCursorKeys()
-	wKey - game.input.keyboard.addKey(Phaser.keyboard.W)
-	aKey - game.input.keyboard.addKey(Phaser.keyboard.A)
-	dKey - game.input.keyboard.addKey(Phaser.keyboard.D)
+	wKey = game.input.keyboard.addKey(Phaser.keyboard.W)
+	aKey = game.input.keyboard.addKey(Phaser.keyboard.A)
+	dKey = game.input.keyboard.addKey(Phaser.keyboard.D)
 }
 
 function update(){

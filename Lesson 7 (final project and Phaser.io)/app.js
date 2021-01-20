@@ -80,7 +80,7 @@ function create(){
 		star.body.bounce.y = 0.7 + Math.random() * 0.2;
 	}
 
-	cusrors = game.input.keyboard.createCursorKeys()
+	cursors = game.input.keyboard.createCursorKeys()
 	wKey = game.input.keyboard.addKey(Phaser.Keyboard.W)
 	aKey = game.input.keyboard.addKey(Phaser.Keyboard.A)
 	dKey = game.input.keyboard.addKey(Phaser.Keyboard.D)

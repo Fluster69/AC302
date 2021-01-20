@@ -98,7 +98,7 @@ function update(){
 		player.animations.play("left");
 	}
 	else if(dKey.isDown || cursors.right.isDown){
-		player.body.velocity.x = -150;
+		player.body.velocity.x = 150;
 		player.animations.play("right");
 	}
 	else{

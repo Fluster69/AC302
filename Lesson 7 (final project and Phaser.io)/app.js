@@ -81,9 +81,9 @@ function create(){
 	}
 
 	cusrors = game.input.keyboard.createCursorKeys()
-	wKey = game.input.keyboard.addKey(Phaser.keyboard.W)
-	aKey = game.input.keyboard.addKey(Phaser.keyboard.A)
-	dKey = game.input.keyboard.addKey(Phaser.keyboard.D)
+	wKey = game.input.Keyboard.addKey(Phaser.keyboard.W)
+	aKey = game.input.Keyboard.addKey(Phaser.keyboard.A)
+	dKey = game.input.Keyboard.addKey(Phaser.keyboard.D)
 }
 
 function update(){

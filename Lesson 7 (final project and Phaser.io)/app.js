@@ -95,7 +95,7 @@ function update(){
 
 	if(aKey.isDown || cursors.left.isDown){
 		player.body.velocity.x = -150;
-		player.animation.play("left");
+		player.animations.play("left");
 	}
 	else if(dKey.isDown || cursors.right.isDown){
 		player.body.velocity.x = -150;

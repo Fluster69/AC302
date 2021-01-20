@@ -99,7 +99,7 @@ function update(){
 	}
 	else if(dKey.isDown || cursors.right.isDown){
 		player.body.velocity.x = -150;
-		player.animation.play("right");
+		player.animations.play("right");
 	}
 	else{
 		player.animations.stop();

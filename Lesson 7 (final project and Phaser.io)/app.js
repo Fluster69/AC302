@@ -108,4 +108,46 @@ function update(){
 	if((wKey.isDown || cursors.up.isDown) && player.body.touching.down){
 		player.body.velocity.y = -300;
 	}
+
+	game.physics.arcade.overlap(player, stars, collectStar);
+	game.physics.arcade.overlap(player, enemy1, loseLife);
+
+	moveEnemy();
+
+	if(life < 0){
+		endGame();
+	}
+
+	function collectStar(player, star){
+		score = score + 1;
+		scoretext.setText(score);
+		star.kill();
+		star.reset(Math.floor(Math.random()*750), 0);
+	}
+
+	function loseLife(player, enemy){
+		life -= 1;
+		lifetext.setText(life);
+		enemy.kill();
+		enemy.reset(10, 20);
+	}
+
+	function moveEnemy(){
+		if(enemy1.x > 759){
+			enemy1.animations.play('left');
+			enemy1.body.velocity.x = -120;
+		}else if(enemy1.x < 405){
+			enemy1.animations.play('right');
+			enemy1.body.velocity.x = 120;
+		}
+	}
+
+	function endGame(){
+		player.kill();
+		scorelabel.text = "GAME OVER! You scored " + score;
+		scoretext.visible = false;
+		lifelabel.visible = false;
+		lifetext.visible = false;
+	}
+	
 }

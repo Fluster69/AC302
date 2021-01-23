@@ -144,10 +144,10 @@ function update(){
 
 	function endGame(){
 		player.kill();
-		scorelabel.text = "GAME OVER! You scored " + score;
+		scorelabel.text = "GAME OVER, YOU LOST! You scored " + score;
 		scoretext.visible = false;
 		lifelabel.visible = false;
 		lifetext.visible = false;
 	}
-	
+
 }

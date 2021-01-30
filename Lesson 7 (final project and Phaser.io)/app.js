@@ -13,6 +13,8 @@ function preload(){
 	game.load.image('sky', './assets/sky.png')
 	game.load.image('ground', './assets/platform.png')
 	game.load.image('star', './assets/star.png')
+	game.load.image('health', 'assets/firstaid.png')
+	game.load.image('diamond', 'assets/diamond.png')
 	game.load.spritesheet('onionheadweirdo', './assets/dude.png', 32, 48)
 	game.load.spritesheet('baddie', './assets/baddie.png', 32, 32)
 }
@@ -80,6 +82,9 @@ function create(){
 		star.body.bounce.y = 0.7 + Math.random() * 0.2;
 	}
 
+	healths = game.add.physicsGroup();
+	healths.enableBody = true;
+
 	cursors = game.input.keyboard.createCursorKeys()
 	wKey = game.input.keyboard.addKey(Phaser.Keyboard.W)
 	aKey = game.input.keyboard.addKey(Phaser.Keyboard.A)
@@ -90,6 +95,7 @@ function update(){
 	game.physics.arcade.collide(player, platforms);
 	game.physics.arcade.collide(stars, platforms);
 	game.physics.arcade.collide(enemy1, platforms);
+	game.physics.arcade.collide(healths, platforms);
 
 	player.body.velocity.x = 0;
 
@@ -111,6 +117,7 @@ function update(){
 
 	game.physics.arcade.overlap(player, stars, collectStar);
 	game.physics.arcade.overlap(player, enemy1, loseLife);
+	game.physics.arcade.overlap(player, healths, collectHealth);
 
 	moveEnemy();
 
@@ -120,6 +127,11 @@ function update(){
 
 	function collectStar(player, star){
 		score = score + 1;
+		if(score % 10 == 0){
+			health = healths.create(Math.floor(Math.random()*750), 0 'health');
+			health.body.gravity.y = 200;
+			health.body.bounce.y = 0.2;
+		}
 		scoretext.setText(score);
 		star.kill();
 		star.reset(Math.floor(Math.random()*750), 0);
@@ -130,6 +142,12 @@ function update(){
 		lifetext.setText(life);
 		enemy.kill();
 		enemy.reset(10, 20);
+	}
+
+	function collectHealth(player, health){
+		life += 1;
+		lifetext.setText(life);
+		health.kill();
 	}
 
 	function moveEnemy(){

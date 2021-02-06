@@ -128,7 +128,7 @@ function update(){
 	function collectStar(player, star){
 		score = score + 1;
 		if(score % 10 == 0){
-			health = healths.create(Math.floor(Math.random()*750), 0 'health');
+			health = healths.create(Math.floor(Math.random()*750), 0, 'healths');
 			health.body.gravity.y = 200;
 			health.body.bounce.y = 0.2;
 		}

@@ -131,7 +131,7 @@ function update(){
 			health = healths.create(Math.floor(Math.random()*750), 0, 'healths');
 			health.body.gravity.y = 200;
 			health.body.bounce.y = 0.2;
-			health_box_requirement *= 2
+			health_box_requirement = 2
 		}
 		scoretext.setText(score);
 		star.kill();
